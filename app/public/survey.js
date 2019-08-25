@@ -42,17 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then(async res => {
                 let match = '';
+                let photo = '';
                 // No match found...
                 if (res.status === 404) {
                     match = 'No compatible match found.';
                 } else {
                     const data = await res.json();
                     match = data.name;
+                    photo = data.photo;
                 }
 
                 // Display modal with match
                 document.querySelector('#survey').reset();
-                $('#friend-match').text(match);
+                $('#match-name').text(match);
+                $('#match-photo').attr('src', photo);
                 $('#friend-modal').modal();
             })
             .catch(err => {
