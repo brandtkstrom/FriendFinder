@@ -1,3 +1,3 @@
 # FriendFinder
 
-![https://bks-friend-finder.herokuapp.com/](Deployed on Heroku)
+[Deployed on Heroku](https://bks-friend-finder.herokuapp.com/)
