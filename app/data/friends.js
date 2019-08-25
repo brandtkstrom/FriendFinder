@@ -11,13 +11,18 @@ module.exports = {
         let bestMatch = undefined;
         let minDiff = undefined;
 
-        this.data.forEach(f => {
-            let diff = friend.compare(f);
+        for (let i=0; i < this.data.length; i++) {
+            const tmpFriend = this.data[i];
+            if (tmpFriend.id === friend.id) {
+                continue;
+            }
+
+            let diff = friend.compare(tmpFriend);
             if (!minDiff || diff < minDiff) {
-                bestMatch = f;
+                bestMatch = tmpFriend;
                 minDiff = diff;
             }
-        });
+        }
 
         return bestMatch;
     }

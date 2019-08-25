@@ -1,5 +1,8 @@
+const uuid = require('uuid/v1');
+
 class Friend {
     constructor(data) {
+        this.id = uuid();
         this.name = data.name;
         this.photo = data.photo;
         this.scores = data.scores;
