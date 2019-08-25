@@ -41,21 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
             .then(async res => {
-                let match = '';
-                let photo = '';
                 // No match found...
                 if (res.status === 404) {
-                    match = 'No compatible match found.';
+                    $('#match-name').text('No compatible match found.');
+                    $('#match-photo').hide();
                 } else {
                     const data = await res.json();
-                    match = data.name;
-                    photo = data.photo;
+
+                    $('#match-name').text(data.name);
+                    $('#match-photo').attr('src', data.photo);
                 }
 
                 // Display modal with match
                 document.querySelector('#survey').reset();
-                $('#match-name').text(match);
-                $('#match-photo').attr('src', photo);
+
                 $('#friend-modal').modal();
             })
             .catch(err => {
