@@ -2,12 +2,12 @@ const Friend = require('./friend');
 
 module.exports = {
     data: [],
-    createFriend: data => {
-        const newFriend = new Friend(data);
+    createFriend: function(friendData) {
+        const newFriend = new Friend(friendData);
         this.data.push(newFriend);
         return newFriend;
     },
-    findMatch: friend => {
+    findMatch: function(friend) {
         let bestMatch = undefined;
         let minDiff = undefined;
 
