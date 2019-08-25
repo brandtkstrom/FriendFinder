@@ -1,12 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 
+// Init port and Express app
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+// Set up middleware
 app.use(express.static('./app/public'));
 app.use(morgan('dev'));
+app.use(express.json());
 
 // Set up routes
 require('./app/routing/htmlRoutes.js')(app);
