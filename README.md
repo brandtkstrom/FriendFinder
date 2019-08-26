@@ -1,3 +1,5 @@
 # FriendFinder
 
-[Deployed on Heroku](https://bks-friend-finder.herokuapp.com/)
+## Answer some questions -> find a friend
+
+### [Deployed on Heroku](https://bks-friend-finder.herokuapp.com/)
